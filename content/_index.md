@@ -4,21 +4,18 @@ date: 2024-01-01
 weight: 1
 chapter: false
 ---
-
-    
+ 
 # Internship Report
-
-
 ### Student Information:
-&emsp; **Full Name:** PHAN TRAN NGUYEN PHUC
+&emsp; **Full Name:** Nguyen Duc Thinh
 
-&emsp; **Phone Number:** 0983117463
+&emsp; **Phone Number:** 0394940599
 
-&emsp; **Email:** phuc.phanz204208z@hcmut.edu.vn
+&emsp; **Email:** thinh.nguyen0707@hcmut.edu.vn
 
 &emsp; **University:** Ho Chi Minh University of Technology, Vietnam National University Ho Chi Minh City
 
-&emsp; **Major:** Computer Engineering
+&emsp; **Major:** Computer Science
 
 &emsp; **Class:** AWS082025
 

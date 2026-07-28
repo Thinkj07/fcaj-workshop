@@ -7,11 +7,11 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Phan Trần Nguyên Phúc
+&emsp; **Họ và tên:** Nguyễn Đức Thịnh
 
-&emsp; **Số điện thoại:** 0983117463
+&emsp; **Số điện thoại:** 0394940599
 
-&emsp; **Email:** phuc.phanz204208z@hcmut.edu.vn
+&emsp; **Email:** thinh.nguyen0707@hcmut.edu.vn
 
 &emsp; **Trường:** Trường Đại học Bách khoa - Đại học Quốc gia TP.HCM
 
@@ -26,8 +26,6 @@ chapter: false
 &emsp; **Thời gian thực tập:** Từ ngày 1/06/2026 đến 15/08/2026
 
 ![Ảnh đại diện của bạn](/images/avatar.png)
-
-
 
 ### Nội dung báo cáo
 
