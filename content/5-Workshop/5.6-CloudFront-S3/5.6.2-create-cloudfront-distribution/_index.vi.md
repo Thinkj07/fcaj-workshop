@@ -58,6 +58,7 @@ AWS đã cập nhật giao diện tạo CloudFront Distribution theo từng bư�
 2. Giữ cấu hình mặc định và chọn **Next**.
 
 ![Cấu hình Bảo mật](/images/5-Workshop/5.6-CloudFront-S3/5.6.2-cloudfront-security.png)
+
 ---
 
 ### Bước 5: Review and create (Kiểm tra & Khởi tạo)

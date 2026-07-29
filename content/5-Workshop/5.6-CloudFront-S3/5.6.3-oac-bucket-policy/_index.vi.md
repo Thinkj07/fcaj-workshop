@@ -14,9 +14,11 @@ Trong bước này, chúng ta sẽ áp dụng **S3 Bucket Policy** cho phép duy
 
 ### Bước 1: Sao chép Bucket Policy từ CloudFront
 
-1. Tại trang chi tiết của CloudFront Distribution vừa tạo, bạn sẽ thấy một thông báo màu vàng có nội dung:
-   > *"The S3 bucket policy needs to be updated. We provided a policy statement that grants read permissions to your origin access control."*
-2. Chọn nút **Copy policy**.
+1. Tại trang chi tiết của CloudFront Distribution vừa tạo, vào tab **Origins**, chọn vào S3 của bạn, sau đó bấm nút Edit phía trên
+2. Kéo xuống mục **Origin access control** sẽ thấy thông báo: 
+ > *"You must allow access to CloudFront using this policy statement. Learn more about giving CloudFront permission to access the S3 bucket."*
+
+2. Chọn nút **Copy policy** ngay bên cạnh.
 
 ![Copy Policy từ CloudFront Console](/images/5-Workshop/5.6-CloudFront-S3/5.6.3-copy-policy-banner.png)
 
@@ -26,7 +28,7 @@ Trong bước này, chúng ta sẽ áp dụng **S3 Bucket Policy** cho phép duy
 
 1. Mở một tab mới, truy cập vào dịch vụ **Amazon S3**.
 2. Chọn S3 Bucket của dự án: **`monaperfume-frontend-bucket-2026`**.
-3. Chuyển sang tab **Permissions** (Quyền truy cập).
+3. Chuyển sang tab **Permissions**.
 4. Cuộn xuống mục **Bucket policy**, chọn nút **Edit**.
 
 ![S3 Edit Bucket Policy](/images/5-Workshop/5.6-CloudFront-S3/5.6.3-s3-edit-policy.png)
@@ -57,9 +59,12 @@ Trong bước này, chúng ta sẽ áp dụng **S3 Bucket Policy** cho phép duy
 
 {{% notice info %}}
 💡 **Lưu ý:**
-- Thay thế `monaperfume-frontend-bucket-2026` bằng đúng tên S3 Bucket của bạn.
-- Thay thế `ACCOUNT_ID` bằng ID tài khoản AWS của bạn.
-- Thay thế `DISTRIBUTION_ID` bằng ID của CloudFront Distribution vừa tạo (ví dụ: `E1A2B3C4D5E6F7`).
+
+Thay thế `monaperfume-frontend-bucket-2026` bằng đúng tên S3 Bucket của bạn.
+
+Thay thế `ACCOUNT_ID` bằng ID tài khoản AWS của bạn.
+
+Thay thế `DISTRIBUTION_ID` bằng ID của CloudFront Distribution vừa tạo (ví dụ: `E1A2B3C4D5E6F7`).
 {{% /notice %}}
 
 6. Chọn **Save changes** để lưu chính sách.

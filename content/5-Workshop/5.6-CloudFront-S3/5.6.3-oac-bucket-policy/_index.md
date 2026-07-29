@@ -14,9 +14,11 @@ In this step, we will apply an **S3 Bucket Policy** granting read access exclusi
 
 ### Step 1: Copy Bucket Policy from CloudFront
 
-1. On the details page of your CloudFront Distribution, locate the yellow alert banner:
-   > *"The S3 bucket policy needs to be updated. We provided a policy statement that grants read permissions to your origin access control."*
-2. Click **Copy policy**.
+1. On the details page of your newly created CloudFront Distribution, go to the **Origins** tab, select your S3 origin, then click the **Edit** button above.
+2. Scroll down to the **Origin access control** section to see the notification:
+ > *"You must allow access to CloudFront using this policy statement. Learn more about giving CloudFront permission to access the S3 bucket."*
+
+2. Click the **Copy policy** button right next to it.
 
 ![Copy Policy from CloudFront Console](/images/5-Workshop/5.6-CloudFront-S3/5.6.3-copy-policy-banner.png)
 
@@ -57,9 +59,12 @@ In this step, we will apply an **S3 Bucket Policy** granting read access exclusi
 
 {{% notice info %}}
 💡 **Note:**
-- Replace `monaperfume-frontend-bucket-2026` with your exact S3 Bucket name.
-- Replace `ACCOUNT_ID` with your AWS Account ID.
-- Replace `DISTRIBUTION_ID` with your CloudFront Distribution ID.
+
+Replace `monaperfume-frontend-bucket-2026` with your exact S3 Bucket name.
+
+Replace `ACCOUNT_ID` with your AWS Account ID.
+
+Replace `DISTRIBUTION_ID` with your CloudFront Distribution ID (e.g., `E1A2B3C4D5E6F7`).
 {{% /notice %}}
 
 6. Click **Save changes**.
