@@ -17,7 +17,6 @@ AWS has updated the CloudFront creation workflow to a step-by-step wizard. Below
 1. Open the **AWS Management Console** and navigate to **CloudFront**.
 2. Click **Create distribution**.
 3. On the **Choose a plan** screen, select the **Free ($0/month)** tier:
-   - Includes **1M requests / 100GB per month**, Always-on DDoS protection, free TLS certificate, and 5GB S3 storage.
 
 ![CloudFront Free Tier Selection](/images/5-Workshop/5.6-CloudFront-S3/5.6.2-cloudfront-choose-plan.png)
 
@@ -29,6 +28,7 @@ AWS has updated the CloudFront creation workflow to a step-by-step wizard. Below
 
 1. Review general details.
 2. Enter an optional description or keep default settings.
+![CloudFront name](/images/5-Workshop/5.6-CloudFront-S3/5.6.2-cloudfront-name.png)
 3. Click **Next**.
 
 ---

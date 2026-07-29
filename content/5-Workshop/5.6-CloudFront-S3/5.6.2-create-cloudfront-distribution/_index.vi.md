@@ -17,7 +17,6 @@ AWS đã cập nhật giao diện tạo CloudFront Distribution theo từng bư�
 1. Mở **AWS Management Console**, truy cập dịch vụ **CloudFront**.
 2. Chọn nút **Create distribution**.
 3. Tại giao diện **Choose a plan**, chọn gói **Free ($0/month)**:
-   - Gói này dành cho học tập, thực hành (Usage allowance: **1M requests / 100GB per month**, bao gồm bảo vệ DDoS, SSL/TLS Certificate miễn phí, 5GB S3 storage).
 
 ![Giao diện chọn gói CloudFront Free Tier](/images/5-Workshop/5.6-CloudFront-S3/5.6.2-cloudfront-choose-plan.png)
 
@@ -29,6 +28,9 @@ AWS đã cập nhật giao diện tạo CloudFront Distribution theo từng bư�
 
 1. Kiểm tra thông tin tổng quan của Distribution.
 2. Đặt tên mô tả cho Distribution (hoặc giữ tên mặc định do AWS gợi ý).
+
+![Giao diện đặt tên cho Distribution](/images/5-Workshop/5.6-CloudFront-S3/5.6.2-cloudfront-name.png)
+
 3. Nhấp **Next** để chuyển sang bước tiếp theo.
 
 ---
