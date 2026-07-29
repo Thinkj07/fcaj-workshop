@@ -37,19 +37,18 @@ AWS đã cập nhật giao diện tạo CloudFront Distribution theo từng bư�
 
 ### Bước 3: Specify origin (Khai báo Nguồn dữ liệu & Cấu hình Origin)
 
-1. **Origin domain**: Nhấp vào ô tìm kiếm và chọn S3 Bucket vừa tạo ở bước 5.6.1:
+1. **Origin type**: Chọn **Amazon S3**
+2. **S3 Origin**: Nhấp vào ô tìm kiếm và chọn S3 Bucket vừa tạo ở bước 5.6.1:
    - Ví dụ: `monaperfume-frontend-bucket-2026.s3.us-east-1.amazonaws.com`
-2. **Origin path**: Để trống (nếu file `index.html` nằm tại thư mục gốc của S3).
-3. **Origin access**:
-   - Chọn **Origin access control settings (recommended)**.
-   - Nhấp vào nút **Create new OAC**.
-   - Giữ thông tin mặc định (Name: `monaperfume-frontend-bucket-2026.s3.us-east-1.amazonaws.com`, Signing behavior: `Sign requests`) ➔ Nhấp **Create**.
+3. **Origin path**: Để trống (nếu file `index.html` nằm tại thư mục gốc của S3).
+4. **Settings**
+   - Tích vào **Allow private S3 bucket access to CloudFront (recommended)**.
+   - Origin settings: Chọn **Use recommended origin settings**.
+   - Cache settings: Chọn **Use recommended cache settings tailored to serving S3 content**
 
 ![Cấu hình Origin Domain và OAC](/images/5-Workshop/5.6-CloudFront-S3/5.6.2-cloudfront-specify-origin.png)
 
-4. **Viewer protocol policy**: Chọn **Redirect HTTP to HTTPS** (Tự động chuyển hướng mọi truy cập HTTP sang chuẩn bảo mật HTTPS).
-5. **Default root object**: Điền **`index.html`** *(Bắt buộc - Tệp mặc định tải ra khi người dùng truy cập trang chủ)*.
-6. Nhấp nút **Next**.
+5. Nhấp nút **Next**.
 
 ---
 
@@ -58,16 +57,10 @@ AWS đã cập nhật giao diện tạo CloudFront Distribution theo từng bư�
 1. Xem lại thiết lập bảo mật (WAF / DDoS protection đã được tích hợp sẵn trong gói Free).
 2. Giữ cấu hình mặc định và chọn **Next**.
 
+![Cấu hình Bảo mật](/images/5-Workshop/5.6-CloudFront-S3/5.6.2-cloudfront-security.png)
 ---
 
-### Bước 5: Get TLS certificate (Chứng chỉ SSL/TLS)
-
-1. Giữ mặc định sử dụng chứng chỉ SSL/TLS mặc định của CloudFront (`*.cloudfront.net`).
-2. Chọn **Next**.
-
----
-
-### Bước 6: Review and create (Kiểm tra & Khởi tạo)
+### Bước 5: Review and create (Kiểm tra & Khởi tạo)
 
 1. Rà soát lại toàn bộ thông tin cấu hình từ Step 1 đến Step 5.
 2. Cuộn xuống cuối trang và nhấp nút **Create distribution**.
@@ -76,11 +69,9 @@ AWS đã cập nhật giao diện tạo CloudFront Distribution theo từng bư�
 
 ---
 
-### Bước 7: Cấu hình Custom Error Responses (Tùy chọn cho ứng dụng SPA)
+### Bước 6: Cấu hình Custom Error Responses (Tùy chọn cho ứng dụng SPA)
 
-Nếu dự án Perfume là ứng dụng trang đơn (Single Page Application - React/Vue/Angular) có Client-side Routing:
-
-1. Sau khi tạo Distribution thành công, truy cập tab **Custom error responses**.
+1. Sau khi tạo Distribution thành công, vào lại Distribution vừa tạo, vào tab **Error pages**.
 2. Chọn **Create custom error response**:
    - **HTTP error code**: `403: Forbidden` hoặc `404: Not Found`.
    - **Customize error response**: Chọn **Yes**.
