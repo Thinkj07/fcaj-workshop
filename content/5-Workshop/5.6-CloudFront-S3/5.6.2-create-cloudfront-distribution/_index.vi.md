@@ -70,7 +70,17 @@ AWS đã cập nhật giao diện tạo CloudFront Distribution theo từng bư�
 
 ---
 
-### Bước 6: Cấu hình Custom Error Responses (Tùy chọn cho ứng dụng SPA)
+### Bước 6: Thêm Default root object
+
+1. Vào Distribution vừa tạo, trong phần **Settings** chọn Edit.
+2. Kéo xuống phần Default root object, thêm vào tên file **index.html**
+3. Chọn **Save changes**.
+
+![Thêm rootfile](/images/5-Workshop/5.6-CloudFront-S3/5.6.2-cloudfront-edit-setting.png)
+
+---
+
+### Bước 7: Cấu hình Custom Error Responses (Tùy chọn cho ứng dụng SPA)
 
 1. Sau khi tạo Distribution thành công, vào lại Distribution vừa tạo, vào tab **Error pages**.
 2. Chọn **Create custom error response**:

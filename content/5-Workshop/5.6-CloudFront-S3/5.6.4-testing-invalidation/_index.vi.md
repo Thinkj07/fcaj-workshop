@@ -53,9 +53,3 @@ Khi bạn thực hiện cập nhật mã nguồn ứng dụng Perfume (ví dụ:
 
 4. Nhấp nút **Create invalidation**.
 5. Đợi trạng thái chuyển từ `In progress` sang `Completed`. Lúc này toàn bộ người dùng truy cập trang web sẽ lập tức nhận được phiên bản giao diện mới nhất.
-
----
-
-#### Tổng kết phần 5.6
-
-Chúc mừng bạn đã hoàn thành thiết lập **CloudFront + Amazon S3** cho ứng dụng **MonaPerfume**! Kiến trúc của bạn hiện tại đáp ứng đầy đủ tiêu chuẩn AWS về **Hiệu năng**, **Tối ưu chi phí** và **Bảo mật**.

@@ -70,7 +70,17 @@ AWS has updated the CloudFront creation workflow to a step-by-step wizard. Below
 
 ---
 
-### Step 6: Configure Custom Error Responses (Optional for SPA)
+### Step 6: Add Default root object
+
+1. Go to your created Distribution, in the **Settings** section click **Edit**.
+2. Scroll down to the Default root object section, enter **index.html**.
+3. Click **Save changes**.
+
+![Add Root File](/images/5-Workshop/5.6-CloudFront-S3/5.6.2-cloudfront-edit-setting.png)
+
+---
+
+### Step 7: Configure Custom Error Responses (Optional for SPA)
 
 1. After creating the Distribution successfully, re-open the created Distribution and navigate to the **Error pages** tab.
 2. Click **Create custom error response**:

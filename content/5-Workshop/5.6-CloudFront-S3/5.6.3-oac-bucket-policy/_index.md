@@ -59,17 +59,12 @@ In this step, we will apply an **S3 Bucket Policy** granting read access exclusi
 
 {{% notice info %}}
 💡 **Note:**
-
-Replace `monaperfume-frontend-bucket-2026` with your exact S3 Bucket name.
-
-Replace `ACCOUNT_ID` with your AWS Account ID.
-
-Replace `DISTRIBUTION_ID` with your CloudFront Distribution ID (e.g., `E1A2B3C4D5E6F7`).
+- Replace `monaperfume-frontend-bucket-2026` with your exact S3 Bucket name.
+- Replace `ACCOUNT_ID` with your AWS Account ID.
+- Replace `DISTRIBUTION_ID` with your CloudFront Distribution ID (e.g., `E1A2B3C4D5E6F7`).
 {{% /notice %}}
 
 6. Click **Save changes**.
-
-![Save S3 Bucket Policy](/images/5-Workshop/5.6-CloudFront-S3/5.6.3-s3-policy-saved.png)
 
 ---
 

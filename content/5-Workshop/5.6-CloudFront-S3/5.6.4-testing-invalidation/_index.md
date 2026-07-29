@@ -53,9 +53,3 @@ When redeploying updated frontend code for the Perfume application to S3, CloudF
 
 4. Click **Create invalidation**.
 5. Wait for the status to change from `In progress` to `Completed`. End-users will immediately receive the updated frontend build.
-
----
-
-#### Section 5.6 Summary
-
-Congratulations! You have successfully established a high-performance **CloudFront + S3** static hosting architecture for the **MonaPerfume** application following AWS best practices for security and efficiency.
