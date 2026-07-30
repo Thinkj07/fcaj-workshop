@@ -1,73 +1,46 @@
 ---
 title: "Event 1"
 date: 2026-06-20
-weight: 3
+weight: 1
 chapter: false
-pre: " <b> 4.3. </b> "
+pre: " <b> 4.1. </b> "
 ---
 
-# Bài thu hoạch “Cloud Architect Game Show”
+# Báo Cáo Thu Hoạch: Cloud Architect Game Show
 
-### Mục Đích Của Sự Kiện
+### 1. Mục Đích Của Sự Kiện
 
-- Trải nghiệm không khí thi đấu học thuật mới mẻ nhưng vẫn giữ vững tinh thần học hỏi và chia sẻ giữa các đội thi.
-- Thử thách và củng cố kiến thức thực tế về các dịch vụ AWS và tư duy thiết kế kiến trúc hệ thống.
-- Thúc đẩy tinh thần đồng đội qua mô hình đấu trường trí tuệ đối kháng trực tiếp.
+- Tạo ra một sân chơi trí tuệ kịch tính giúp các thành viên giao lưu, học hỏi và rèn luyện tư duy thiết kế kiến trúc trên điện toán đám mây.
+- Thử thách khả năng xử lý tình huống thực tế và mức độ am hiểu về các dịch vụ thuộc hệ sinh thái AWS.
+- Nâng cao tinh thần làm việc nhóm và chiến thuật phối hợp dưới áp lực thời gian.
 
-### Danh Sách Đội Thi & Thể Lệ
+### 2. Danh Sách Diễn Giả (Optional)
 
-- **Quy mô:** 8 đội thi với sự tham gia của các thành viên tài năng, đối đầu qua các vòng đấu trí tuệ (diễn ra đến hết vòng tứ kết).
-- **Cơ chế thi đấu:** Trả lời các bộ câu hỏi từ dễ đến khó về Cloud và kiến trúc; sử dụng chiến thuật linh hoạt qua các kỹ năng chiến lược.
-- **Kỹ năng chiến lược:**
-    * Rủi ro tối thiểu (1 lượt): An toàn hóa các câu hỏi chưa chắc chắn để bảo toàn điểm số.
-    * Ngôi sao hi vọng (1 lượt): Nhân đôi điểm số cho câu trả lời tự tin nhất.
+- **Ban tổ chức & Trọng tài:** Đội ngũ từ FCAJ.
+- **Quy mô:** 8 đội thi tranh tài qua các vòng đấu loại trực tiếp đến vòng tứ kết.
 
-### Nội Dung Nổi Bật
+### 3. Nội Dung Nổi Bật
 
-#### Thử Thách Kiến Thức AWS & Thiết Kế Kiến Trúc
-- **Hệ thống câu hỏi đa dạng:** Bao quát từ các dịch vụ cốt lõi của AWS đến các bài toán thiết kế kiến trúc thực tế.
-- **Tốc độ và sự chính xác:** Đòi hỏi các đội thi không chỉ hiểu sâu về lý thuyết dịch vụ mà còn phải nhanh nhạy trong việc xử lý tình huống dưới áp lực thời gian.
+- **Mô hình thi đấu chiến thuật:** Các đội lần lượt vượt qua các bộ câu hỏi từ nền tảng đến chuyên sâu về AWS. Hệ thống thi đấu tích hợp các thẻ kỹ năng chiến lược như "Bảo toàn điểm" (giảm thiểu rủi ro khi chưa chắc chắn) và "Nhân đôi điểm" (kích hoạt cho câu hỏi tự tin nhất).
+- **Giải mã bài toán kiến trúc thực tế:** Các câu hỏi không chỉ dừng lại ở lý thuyết mà yêu cầu phân tích mô hình thiết kế, tối ưu chi phí, khả năng mở rộng và đảm bảo an toàn thông tin cho hệ thống đám mây.
+- **Cuộc đua tốc độ và bản lĩnh:** Áp lực thời gian đòi hỏi các đội phải nhanh chóng chắt lọc thông tin, hội ý và đưa ra phương án chính xác nhất.
 
-#### Tinh Thần Đồng Đội & Chiến Thuật Đối Kháng
-- **Phối hợp nhóm:** Sức mạnh tổng hợp từ các thành viên trong việc chắt lọc kiến thức, tranh luận và đưa ra đáp án tối ưu.
-- **Quản trị rủi ro chiến thuật:** Sự cân nhắc kỹ lưỡng khi quyết định kích hoạt Ngôi sao hi vọng hay Rủi ro tối thiểu để tối ưu hóa điểm số qua từng vòng đấu.
+### 4. Kiến Thức Học Được
 
-### Những Gì Học Được
+- **Hệ thống hóa dịch vụ AWS:** Nhận diện được các điểm thiếu sót cá nhân trong việc kết hợp linh hoạt các dịch vụ AWS (VPC, EC2, IAM, Serverless...).
+- **Tư duy phân tích kiến trúc linh hoạt:** Rèn luyện phản xạ đọc đề bài, phát hiện bottleneck và lựa chọn giải pháp tối ưu trong thời gian ngắn.
+- **Quản trị rủi ro & Ra quyết định:** Học được cách cân nhắc giữa cơ hội nhận điểm thưởng và nguy cơ mất điểm khi sử dụng các thẻ trợ giúp chiến thuật.
 
-#### Tư Duy Thiết Kế & Kiến Thức Kỹ Thuật
+### 5. Ứng Dụng Vào Công Việc
 
-- **Hệ thống hóa kiến thức Cloud:** Nhận diện rõ hơn những điểm mù trong việc lựa chọn và kết hợp các dịch vụ AWS qua từng câu hỏi hóc búa của ban tổ chức.
-- **Tư duy phản xạ nhanh:** Học hỏi cách phân tích nhanh các bài toán kiến trúc giả định để đưa ra phương án giải quyết hợp lý trong thời gian ngắn.
+- **Bổ sung hổng kiến thức:** Chủ động tra cứu, thực hành lại các mảng kiến thức AWS còn chưa nắm vững sau khi theo dõi các câu hỏi trong game show.
+- **Cải thiện tư duy giải quyết vấn đề:** Áp dụng phương pháp phân tích nguyên nhân gốc rễ và phản xạ nhanh khi troubleshoot sự cố trong dự án thực tế.
+- **Thúc đẩy làm việc nhóm:** Tăng cường sự trao đổi, phản biện có xây dựng với đồng nghiệp khi thiết kế kiến trúc ứng dụng.
 
-#### Kỹ Năng Mềm & Sự Thấu Hiểu
+### 6. Trải Nghiệm Cá Nhân
 
-- **Tinh thần đồng đội:** Thấy được tầm quan trọng của sự lắng nghe, tôn trọng ý kiến đóng góp của các thành viên trong đội.
-- **Tinh thần fair-play:** Trân trọng nỗ lực của các đội bạn, qua đó đúc rút kinh nghiệm về khả năng làm việc dưới áp lực.
+Theo dõi **Cloud Architect Game Show** mang đến cho em một không khí học thuật vừa gay cấn vừa đầy cảm hứng. Sự kết hợp giữa tri thức kỹ thuật và yếu tố chiến thuật thi đấu làm cho các khái niệm Cloud trở nên gần gũi, sinh động hơn rất nhiều. Em cảm nhận rõ sức nóng từ sự quyết tâm của các đội thi cũng như tinh thần kết nối mạnh mẽ của cộng đồng yêu công nghệ.
 
-#### Ứng Dụng Vào Công Việc
+### 7. Hình ảnh tham gia sự kiên
 
-- **Củng cố nền tảng Cloud:** Chủ động ôn tập và bổ sung các khoảng trống kiến thức về dịch vụ AWS đã lộ ra qua các câu hỏi trong game show.
-- **Nâng cao khả năng xử lý tình huống:** Áp dụng tư duy logic và phản xạ nhanh vào việc troubleshoot các vấn đề kỹ thuật thực tế trong các dự án cá nhân và đội nhóm.
-- **Phát triển tinh thần collaboration:** Thắt chặt sự gắn kết với đồng nghiệp/bạn bè khi cùng nhau giải quyết các bài toán hệ thống phức tạp.
-
-### Trải nghiệm trong event
-
-Tham gia với tư cách là người xem sự kiện **“Cloud Architect Puzzle Game Show”** là một trải nghiệm vô cùng thú vị và lôi cuốn, mang lại góc nhìn sinh động về thế giới Cloud Computing. Một số trải nghiệm nổi bật:
-
-#### Không khí tranh tài sôi nổi
-- Chứng kiến màn rượt đuổi điểm số nghẹt thở giữa các đội thi từ vòng loại đến vòng tứ kết.
-- Sự chuẩn bị chỉn chu trong từng bộ câu hỏi giúp người xem không chỉ giải trí mà còn học hỏi thêm vô số kiến thức thực chiến.
-
-#### Góc nhìn thực tế từ các tình huống kiến trúc
-- Thông qua các đáp án và sự giải thích cho từng câu hỏi, em tự kiểm chứng lại năng lực của bản thân đối với hệ thống dịch vụ AWS.
-- Nhận ra tầm quan trọng của việc hiểu sâu bản chất dịch vụ thay vì chỉ học thuộc lý thuyết bề ngoài.
-
-#### Kết nối và lan tỏa tinh thần học tập
-- Cổ vũ nhiệt tình cho các đội thi, đồng thời mở rộng mối quan hệ với những người có cùng niềm đam mê công nghệ.
-- Trải nghiệm năng lượng tích cực từ cộng đồng những người yêu thích Cloud.
-
-#### Bài học rút ra
-- Kiến thức Cloud rất rộng, đòi hỏi quá trình tự học và cập nhật liên tục.
-- Sự kết hợp giữa tư duy cá nhân và sức mạnh tập thể là chìa khóa để giải quyết mọi bài toán công nghệ phức tạp.
-
-#### Một số hình ảnh khi tham gia sự kiện
+![Cloud Architecture](/images/4-Events/4.1-Event1/1.png)
