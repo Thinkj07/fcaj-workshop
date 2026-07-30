@@ -1,57 +1,28 @@
 ---
 title: "Week 8 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-07-20
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 8 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Securely manage sensitive configuration data (API Keys, DB Credentials) using AWS Systems Manager Parameter Store.
+* Understand the mindset and workflow of Continuous Integration/Continuous Deployment (CI/CD).
+* Automate the code/server deployment process whenever changes are pushed to the repository (GitHub Actions / AWS CodePipeline).
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks to Implement This Week:
+| Day | Tasks | Start Date | Completion Date | Reference Documentation |
+| --- | ----- | ---------- | --------------- | ----------------------- |
+| Mon | - Learn about the risks of hardcoding secrets (API Keys, Credentials) in source code <br> - Learn about the AWS Systems Manager (SSM) Parameter Store service | 20/07/2026 | 20/07/2026 | |
+| Tue | - **Hands-on practice:** Store parameters (`SecureString`) in Parameter Store and retrieve them directly from an application/Lambda using SDK | 21/07/2026 | 21/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Wed, Thu | - Learn an overview of CI/CD Pipelines in software projects <br> - **Hands-on practice:** Set up a simple Workflow with GitHub Actions (or AWS CodePipeline) to automatically test and deploy source code to S3 / App Runner on every `git push` | 22/07/2026 | 23/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri, Sat | - **Hands-on practice:** Test code changes, verify the automated Build & Deploy process, and inspect build logs | 24/07/2026 | 25/07/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 8 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Completely decoupled sensitive configuration and credentials from source code using SSM Parameter Store.
+* Gained a deep understanding of automated software delivery workflows in real-world scenarios (CI/CD).
+* Successfully built an automated pipeline to update cloud applications immediately whenever new code is pushed.

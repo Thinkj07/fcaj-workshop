@@ -1,59 +1,26 @@
 ---
 title: "Worklog Tuần 9"
-date: 2024-01-01
-weight: 1
+date: 2026-07-27
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 9:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nắm vững cơ chế giám sát hoạt động, theo dõi Log và Metrics của hệ thống qua Amazon CloudWatch.
+* Thực hiện dọn dẹp (Resource Cleanup) các dịch vụ AWS đã khởi tạo để tránh phát sinh chi phí ngoài ý muốn.
+* Rà soát toàn bộ chuỗi Worklog (từ Tuần 1 đến Tuần 9), tổng hợp tài liệu project và hoàn thiện báo cáo thực tập.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | ----------| ------------ | --------------- | -------------- |
+| 2, 3   | - Tìm hiểu Amazon CloudWatch: CloudWatch Logs (Log Groups, Log Streams) & CloudWatch Metrics | 27/07/2026   | 27/07/2026      |
+| 4 | - **Resource Cleanup:** Xóa các dịch vụ không còn sử dụng (RDS, App Runner, ECR images, S3 buckets) | 29/07/2026 | 29/07/2026 |
+| 5, 6 | - Rà soát lại toàn bộ Worklog từ tuần 1 đến tuần 9 cùng với project, tổng hợp tài liệu và hoàn thiện báo cáo thực tập | 30/07/2026 | 31/07/2026 |
 
 ### Kết quả đạt được tuần 9:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Thành thạo tra cứu CloudWatch Logs (Log Groups, Log Streams) và đọc các chỉ số giám sát (CloudWatch Metrics) của ứng dụng.
+* Đã thu hồi và dọn dẹp an toàn toàn bộ tài nguyên cloud (RDS, App Runner, ECR, S3) không còn sử dụng.
+* Hoàn thiện trọn vẹn bộ hồ sơ thực tập gồm báo cáo tổng kết, tài liệu kỹ thuật của project và toàn bộ hệ thống Worklog 9 tuần.

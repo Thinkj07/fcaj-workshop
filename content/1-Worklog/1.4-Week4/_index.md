@@ -1,57 +1,28 @@
 ---
 title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-06-22
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 4 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Learn an overview of AWS database services (Relational vs. Non-Relational).
+* Provision, configure network settings, and successfully connect to Amazon RDS (MySQL/PostgreSQL).
+* Understand Multi-AZ architecture to optimize High Availability (HA).
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks to Implement This Week:
+| Day | Tasks | Start Date | Completion Date | Reference Documentation |
+| --- | ----- | ---------- | --------------- | ----------------------- |
+| Mon | - Overview of Databases on AWS: Amazon RDS, Aurora, DynamoDB <br> - Compare self-hosting DB on EC2 vs. using Amazon RDS | 22/06/2026 | 22/06/2026 | |
+| Tue, Wed | - Learn RDS Architecture: <br>&emsp; + DB Instance Engines (MySQL, PostgreSQL) <br>&emsp; + DB Subnet Groups & VPC Setup <br>&emsp; + Security Groups for Databases | 23/06/2026 | 24/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Thu | - **Hands-on practice:** <br>&emsp; + Create a DB Subnet Group in VPC <br>&emsp; + Launch an RDS MySQL Instance | 25/06/2026 | 25/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| Fri | - Learn Multi-AZ Deployment concepts (Synchronous replication, Failover) <br> - **Hands-on practice:** <br>&emsp; + Connect to RDS using DBeaver / MySQL Workbench | 26/06/2026 | 26/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 4 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Understood when to choose relational databases (RDS) versus non-relational databases (DynamoDB).
+* Successfully provisioned an Amazon RDS MySQL instance configured within a private VPC network.
+* Grasped the operational principles of Multi-AZ deployment for system failover and high availability.
