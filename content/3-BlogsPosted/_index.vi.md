@@ -1,22 +1,23 @@
 ---
-title: "Các bài blogs đã đăng"
-date: 2024-01-01
-weight: 3
-chapter: false
-pre: " <b> 3. </b> "
+title : "Các bài blogs đã đăng"
+date : "2026-07-27"
+weight : 3
+chapter : false
+pre : " <b> 3. </b> "
 ---
 
-{{% notice warning %}}  
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Các bài blogs đã đăng
 
-Tại đây sẽ là phần liệt kê, giới thiệu các blogs mà các bạn đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). Ví dụ:
+Dưới đây là các bài blog em đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj) trong suốt quá trình thực tập tại Amazon Web Services Việt Nam.
 
-###  [Blog 1 - SESSION POLICIES TRONG AMAZON EKS POD IDENTITY](3.1-Blog1/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### [Blog 1 - GIỚI THIỆU AMAZON VPC REGIONAL NAT GATEWAY](3.1-blog1/)
 
-###  [Blog 2 - ...](3.2-Blog2/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Blog này giới thiệu chế độ hoạt động mới của AWS NAT Gateway – Regional NAT Gateway (RNAT), cho phép một NAT Gateway duy nhất tự động mở rộng và thu hẹp phạm vi hoạt động qua nhiều Availability Zone trong cùng một VPC. Đây là bước tiến giúp đơn giản hóa đáng kể việc quản lý hạ tầng mạng so với mô hình NAT Gateway theo từng AZ trước đây.
 
-###  [Blog 3 - ...](3.3-Blog3/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### [Blog 2 - LỢI ÍCH CỦA REGIONAL NAT GATEWAY: BẢO MẬT, MỞ RỘNG VÀ TÍCH HỢP IPAM](3.2-blog2/)
+
+Blog này phân tích sâu hơn các lợi ích của Regional NAT Gateway về mặt bảo mật, khả năng tự động mở rộng chống cạn kiệt cổng, và khả năng tích hợp với VPC IPAM để quản lý địa chỉ IP một cách có kiểm soát. Bài viết cũng đề cập đến khả năng giám sát qua CloudWatch và tích hợp với các giải pháp kiểm tra lưu lượng như AWS Network Firewall.
+
+### [Blog 3 - AMAZON EVENTBRIDGE LÀ GÌ? XÂY DỰNG ỨNG DỤNG HƯỚNG SỰ KIỆN TRÊN AWS](3.3-blog3/)
+
+Blog này giới thiệu Amazon EventBridge – dịch vụ serverless giúp xây dựng kiến trúc hướng sự kiện (event-driven architecture) trên AWS. Bài viết phân tích hai cơ chế chính là Event bus và Pipes, cách chúng phối hợp với nhau, cùng vai trò của EventBridge Scheduler trong việc lập lịch tác vụ tự động.

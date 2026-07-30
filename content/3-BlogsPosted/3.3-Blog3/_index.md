@@ -1,31 +1,32 @@
 ---
-title: "Blog 3"
-date: 2024-01-01
-weight: 1
-chapter: false
-pre: " <b> 3.3. </b> "
+title : "Blog 3"
+date : "2026-07-27"
+weight : 1
+chapter : false
+pre : " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# WHAT IS AMAZON EVENTBRIDGE? BUILDING EVENT-DRIVEN APPLICATIONS ON AWS
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+Amazon EventBridge is a serverless event bus service that makes it easy to connect applications using data from your own applications, integrated Software-as-a-Service (SaaS) applications, and AWS services. EventBridge simplifies building event-driven applications by automatically routing events from sources to targets without managing infrastructure.
 
-Key points to know:
+![Kiến trúc VPC](/images/5-Workshop/5.3-vpc/vpc_archi2.png)
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+### Key Takeaways
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+- **Event-Driven Architecture**: EventBridge enables decoupling of system components, allowing services to communicate asynchronously through events.
+- **Event Buses & Event Pipes**:
+  - **Event Bus**: Ingests and routes events to multiple targets based on flexible filtering rules.
+  - **EventBridge Pipes**: Creates point-to-point integrations directly from event sources (such as SQS, DynamoDB Streams, Kinesis) to targets without requiring custom glue code.
+- **EventBridge Scheduler**: Allows scheduling recurring tasks or one-time invocations at specific future timestamps with high accuracy, supporting millions of concurrent schedules.
+- **Rich Integrations**: Provides out-of-the-box integration with over 200 AWS services and dozens of major SaaS partners (Zendesk, Datadog, PagerDuty, etc.).
+- **Filtering & Transformation**: Enables event filtering and payload transformation on the fly before delivering events to targets, reducing processing overhead on consumer services.
 
-...Image...
+Adopting EventBridge makes system architectures more resilient, easier to scale, and simpler to maintain while significantly reducing the boilerplate code needed to connect services.
 
-...Link...
+---
 
-...Guide...
+### References
+
+- [What is Amazon EventBridge? – AWS Documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)
+- [Amazon EventBridge Features](https://aws.amazon.com/eventbridge/features/)
