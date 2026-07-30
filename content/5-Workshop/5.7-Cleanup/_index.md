@@ -1,32 +1,41 @@
 ---
-title : "Clean up"
-date : 2024-01-01
+title : "Clean up resources"
+date : 2026-07-30
 weight : 7
 chapter : false
 pre : " <b> 5.7. </b> "
 ---
-Congratulations on completing this workshop! 
-In this workshop, you learned architecture patterns for accessing Amazon S3 without using the Public Internet. 
-+ By creating a gateway endpoint, you enabled direct communication between EC2 resources and Amazon S3, without traversing an Internet Gateway. 
-+ By creating an interface endpoint you extended S3 connectivity to resources running in your on-premises data center via AWS Site-to-Site VPN or Direct Connect. 
 
-#### clean up
-1. Navigate to Hosted Zones on the left side of Route 53 console. Click the name of *s3.us-east-1.amazonaws.com* zone. Click Delete and confirm deletion by typing delete. 
+#### Clean up resources
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+In this section, we will clean up all AWS resources created during the lab (**CloudFront Distribution** and **Amazon S3 Bucket**) to avoid incurring unnecessary charges on your AWS account.
 
-2. Disassociate the Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+---
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+#### Cleanup Steps
 
-4. Open the CloudFormation console  and delete the two CloudFormation Stacks that you created for this lab:
-+ PLOnpremSetup
-+ PLCloudSetup
+### Disable and Delete CloudFront Distribution
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
+1. Open the **AWS Management Console** and navigate to **CloudFront**.
+2. From the **Distributions** list, select the distribution created for the MonaPerfume project.
+3. Click **Disable** on the top toolbar.
+4. Confirm disablement and wait **1 to 3 minutes** until the **Status** changes to `Disabled`.
+5. Once the status shows `Disabled`, select the distribution again and click **Delete**.
+6. A notification will appear stating that the plan must be cancelled before it can be deleted; select **Cancel plan**.
+7. Choose **Delete** again, confirm permanent deletion of the CloudFront Distribution.
 
-5. Delete S3 buckets
-+ Open S3 console
-+ Choose the bucket we created for the lab, click and confirm empty. Click delete and confirm delete.
+![Disable and Delete CloudFront Distribution](/images/5-Workshop/5.7-Cleanup/delete-cloudfront.png)
 
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+---
+
+### Empty and Delete Amazon S3 Bucket
+
+1. Open the **AWS Management Console** and navigate to **Amazon S3**.
+2. Select your S3 Bucket: **`monaperfume-frontend-bucket-2026`**.
+3. Click **Empty** on the toolbar.
+4. Type **`permanently delete`** in the confirmation box to purge all static build files and folders.
+5. Once emptied successfully, return to the Buckets list.
+6. Select **`monaperfume-frontend-bucket-2026`** ➔ Click **Delete**.
+7. Type the exact bucket name **`monaperfume-frontend-bucket-2026`** in the confirmation field and click **Delete bucket**.
+
+![Empty and Delete S3 Bucket](/images/5-Workshop/5.7-Cleanup/delete-s3.png)

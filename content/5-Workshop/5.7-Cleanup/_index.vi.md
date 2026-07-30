@@ -1,6 +1,6 @@
 ---
 title : "Dọn dẹp tài nguyên"
-date : 2024-01-01
+date : 2026-07-30
 weight : 7
 chapter : false
 pre : " <b> 5.7. </b> "
@@ -8,30 +8,34 @@ pre : " <b> 5.7. </b> "
 
 #### Dọn dẹp tài nguyên
 
-Xin chúc mừng bạn đã hoàn thành xong lab này!
-Trong lab này, bạn đã học về các mô hình kiến trúc để truy cập Amazon S3 mà không sử dụng Public Internet.
+Trong phần này, chúng ta sẽ tiến hành dọn dẹp các tài nguyên AWS đã khởi tạo trong quá trình thực hành (**CloudFront Distribution** và **Amazon S3 Bucket**) để tránh phát sinh chi phí không cần thiết trên tài khoản AWS.
 
-+ Bằng cách tạo Gateway endpoint, bạn đã cho phép giao tiếp trực tiếp giữa các tài nguyên EC2 và Amazon S3, mà không đi qua Internet Gateway.
-Bằng cách tạo Interface endpoint, bạn đã mở rộng kết nối S3 đến các tài nguyên chạy trên trung tâm dữ liệu trên chỗ của bạn thông qua AWS Site-to-Site VPN hoặc Direct Connect.
+---
 
-#### Dọn dẹp
-1. Điều hướng đến Hosted Zones trên phía trái của bảng điều khiển Route 53. Nhấp vào tên của  s3.us-east-1.amazonaws.com zone. Nhấp vào Delete và xác nhận việc xóa bằng cách nhập từ khóa "delete".
+#### Các bước dọn dẹp
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/delete-zone.png)
+### Vô hiệu hóa (Disable) và Xóa CloudFront Distribution
 
-2. Disassociate Route 53 Resolver Rule - myS3Rule from "VPC Onprem" and Delete it. 
+1. Mở **AWS Management Console**, truy cập dịch vụ **CloudFront**.
+2. Tại danh sách **Distributions**, tích chọn Distribution đã tạo cho dự án MonaPerfume.
+3. Chọn nút **Disable** ở thanh công cụ phía trên.
+4. Xác nhận vô hiệu hóa và chờ khoảng **1 - 3 phút** cho đến khi cột **Status** chuyển sang trạng thái `Disabled`.
+5. Sau khi trạng thái đã là `Disabled`, chọn lại Distribution đó và nhấp nút **Delete**.
+6. Một dòng thông báo sẽ xuất hiện thông báo phải huỷ plan để có thể xoá, chọn **Cancel plan**.
+7. Chọn lại nút **Delete**, xác nhận xóa vĩnh viễn CloudFront Distribution.
 
-![hosted zone](/images/5-Workshop/5.6-Cleanup/vpc.png)
+![Disable và Xóa CloudFront Distribution](/images/5-Workshop/5.6-Cleanup/delete-cloudfront.png)
 
-4.Mở console của CloudFormation và xóa hai stack CloudFormation mà bạn đã tạo cho bài thực hành này:
-+ PLOnpremSetup
-+ PLCloudSetup
+---
 
-![delete stack](/images/5-Workshop/5.6-Cleanup/delete-stack.png)
+### Làm rỗng (Empty) và Xóa Amazon S3 Bucket
 
-5. Xóa các S3 bucket
+1. Mở **AWS Management Console**, truy cập dịch vụ **Amazon S3**.
+2. Tìm và chọn S3 Bucket của bạn: **`monaperfume-frontend-bucket-2026`**.
+3. Chọn nút **Empty** ở thanh công cụ.
+4. Nhập từ khóa **`permanently delete`** vào ô xác nhận để xóa toàn bộ tệp tĩnh và thư mục chứa mã nguồn frontend.
+5. Sau khi làm rỗng thành công, quay trở lại danh sách Bucket.
+6. Chọn lại Bucket **`monaperfume-frontend-bucket-2026`** ➔ Chọn nút **Delete**.
+7. Nhập chính xác tên Bucket **`monaperfume-frontend-bucket-2026`** vào ô xác nhận và bấm **Delete bucket**.
 
-+ Mở bảng điều khiển S3
-+ Chọn bucket chúng ta đã tạo cho lab, nhấp chuột và xác nhận là empty. Nhấp Delete và xác nhận delete.
-+ 
-![delete s3](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+![Làm rỗng và Xóa S3 Bucket](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
