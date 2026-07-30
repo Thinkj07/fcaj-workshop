@@ -34,7 +34,7 @@ The program provided generous hands-on access to AWS resources, flexible schedul
 
 ---
 
-### Key Reflection Questions
+### Additional Questions
 
 - **What did you find most satisfying during your internship?**  
   My proudest achievement was independently crafting a comprehensive **E-Commerce Perfume Store Backend** architectural proposal aligned with AWS Best Practices, as well as experiencing cutting-edge Agentic AI solutions live at the **FCAJ × AABW** event.
