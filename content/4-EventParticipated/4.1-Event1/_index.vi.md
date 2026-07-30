@@ -43,4 +43,4 @@ Theo dõi **Cloud Architect Game Show** mang đến cho em một không khí h�
 
 ### 7. Hình ảnh tham gia sự kiên
 
-![Cloud Architecture](images/4-Events/4.1-Event1/1.png)
+![Cloud Architecture](images/4-Events/4.1-Event1/1.jpg)
