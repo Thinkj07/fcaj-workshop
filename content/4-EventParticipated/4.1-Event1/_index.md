@@ -44,4 +44,4 @@ Attending the **Cloud Architect Game Show** provided an exciting and highly insp
 
 ### 7. Event participation photos
 
-![Cloud Architecture](/images/4-Events/4.1-Event1/1.jpg)
+![Cloud Architecture](/images/4-Events/4.1-Event1/1.png)
