@@ -1,156 +1,228 @@
 ---
-title : "Environment Setup and Application Deployment"
-date : 2026-07-26
+title : "Deploy environment setup"
+date : 2026-07-28
 weight : 3
 chapter : false
 pre : " <b> 5.5.3 </b> "
 ---
 
-# Environment Setup and Application Deployment (Deploy)
+## 1. Goal
 
-In this section, we will connect to the private EC2 instance using **AWS Systems Manager Session Manager (SSM)**, install Node.js environment, clone the Perfume Store Backend source code, configure environment variables for **Amazon RDS** and **Amazon S3** connectivity, run database migrations (Prisma Migrate & Seed), launch the backend application using **PM2**, and verify health status through the **Application Load Balancer (ALB)**.
+This section explains how to set up the development environment and deploy the perfume website system on AWS. After completion, the system will include:
 
----
-
-### Step 1: Connect to Private EC2 Instance via AWS Systems Manager (SSM)
-
-Because the EC2 instance resides in a Private Subnet without a Public IP, we use **SSM Session Manager** to establish a secure connection without opening SSH port 22.
-
-1. Open the **AWS Management Console** -> navigate to **Systems Manager** (or search `Session Manager`).
-2. On the left navigation pane, choose **Session Manager** -> click **Start session**.
-3. Select the EC2 instance `MonaPerfume-EC2-PRIVATE-01` -> click **Start session**.
-4. A new browser terminal tab will open with the shell prompt `sh-4.2$`.
-
-Switch to the `ec2-user` and navigate to the home directory:
-```bash
-sudo su - ec2-user
-cd ~
-```
+- Backend running on Amazon EC2.
+- PostgreSQL database using Amazon RDS.
+- Frontend React deployed through Amazon S3 and Amazon CloudFront.
+- Prisma ORM managing the database.
+- Full application accessible via the Internet and communicating with the database in AWS.
 
 ---
 
-### Step 2: Install Node.js, Git, and PM2
+## 2. Required tools
 
-1. Update system package repositories on Amazon Linux 2023:
+Before deployment, prepare the following tools:
+
+- Node.js (LTS recommended)
+- npm
+- Git
+- Prisma ORM
+- PostgreSQL
+- Docker and Docker Compose (if running local database)
+- AWS account
+
+---
+
+## 3. Install Git and clone the project
+
+On Amazon Linux EC2, install Git if it is not already installed:
+
 ```bash
-sudo dnf update -y
+yum install -y git
 ```
 
-2. Install **Git**:
+Change to the `ec2-user` home directory and clone the repository:
+
 ```bash
-sudo dnf install git -y
-git --version
+cd /home/ec2-user
+git clone https://github.com/Thinkj07/perfume-web.git
 ```
 
-3. Install **Node.js 22.x** (compatible version for the application):
+If you want to work directly in the project folder:
+
 ```bash
-curl -fsSL https://rpm.nodesource.com/setup_22.x | sudo bash -
-sudo dnf install -y nodejs
+cd /home/ec2-user/perfume-web
+```
+
+---
+
+## 4. Install Node.js
+
+On Amazon Linux EC2, use **NVM (Node Version Manager)** to install Node.js.
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+source "$NVM_DIR/nvm.sh"
+
+nvm install --lts
+nvm use --lts
+```
+
+Check the versions:
+
+```bash
 node -v
 npm -v
 ```
 
-4. Install **PM2** process manager globally:
-```bash
-sudo npm install -g pm2
-```
-
 ---
 
-### Step 3: Clone Backend Source Code and Install Dependencies
+## 5. Install project dependencies
 
-1. Clone the repository containing the Perfume Store backend codebase:
+Move into the backend folder:
+
 ```bash
-git clone https://github.com/uyentrn/web-project.git
-cd web-project/backend
+cd backend
 ```
 
-2. Install application dependencies:
+Install all packages:
+
 ```bash
 npm install
 ```
 
 ---
 
-### Step 4: Configure Environment Variables (.env)
+## 6. Configure environment variables
 
-Create a `.env` file to connect the application to **Amazon RDS** and **Amazon S3**:
+Create the `.env` file:
 
 ```bash
-nano .env
+cp .env.example .env
 ```
 
-Enter the configuration values matching the AWS infrastructure resources created in previous steps:
+Example configuration:
 
 ```env
+NODE_ENV=development
 PORT=3000
-NODE_ENV=production
 
-# Amazon RDS Database Connection String (Database Endpoint from step 5.4)
-DATABASE_URL="postgresql://dbadmin:YourStrongPassword123@monaperfume-rds.c123456789.us-east-1.rds.amazonaws.com:5432/monaperfumedb?schema=public"
+DATABASE_URL=postgresql://postgres:password@database-1.xxxxx.ap-southeast-1.rds.amazonaws.com:5432/perfume_store?schema=public
 
-# Amazon S3 Bucket Configuration (from step 5.6)
-AWS_REGION=us-east-1
-S3_BUCKET_NAME=monaperfume-assets-bucket
+JWT_SECRET=replace-with-secret-key
+JWT_ISSUER=perfume-api
+JWT_AUDIENCE=perfume-client
 
-# Application Security Key
-JWT_SECRET="MonaPerfumeSecretKey2026"
+ACCESS_TOKEN_TTL_SECONDS=900
+REFRESH_TOKEN_TTL_SECONDS=604800
+
+BCRYPT_ROUNDS=12
+
+AWS_REGION=ap-southeast-1
+STAGE=production
 ```
 
-Save and exit the file (`Ctrl + O`, `Enter`, `Ctrl + X`).
+In this file:
+
+- `DATABASE_URL` is the connection string to Amazon RDS.
+- `JWT_SECRET` is used to sign JWT tokens.
+- `PORT` is the backend listening port.
 
 ---
 
-### Step 5: Execute Database Migrations and Start Backend
+## 7. Connect to Amazon RDS PostgreSQL
 
-1. Generate Prisma client and deploy database schema migrations:
+Check PostgreSQL connection:
+
 ```bash
-npx prisma generate
+nc -vz database-1.xxxxx.ap-southeast-1.rds.amazonaws.com 5432
+```
+
+If the connection succeeds, you will see:
+
+```text
+Connected to database-1.xxxxx.ap-southeast-1.rds.amazonaws.com:5432
+```
+
+---
+
+## 8. Initialize the database
+
+After configuring `.env`, run migrations:
+
+```bash
 npx prisma migrate deploy
 ```
 
-2. Seed initial sample database records:
+If the project includes seed data:
+
 ```bash
-npm run db:seed
+npx prisma db seed
 ```
 
-3. Launch the backend application on port `3000` using **PM2**:
+Run `db seed` only when you want to insert initial data into the system.
+
+---
+
+## 9. Run the backend
+
+Start the server:
+
 ```bash
-pm2 start src/server.js --name "monaperfume-backend"
-pm2 save
+npm run dev
 ```
 
-4. Configure **PM2** to start automatically on system reboot:
-```bash
-pm2 startup systemd
+Expected output:
+
+```text
+API listening on port 3000
 ```
 
-5. Verify application status:
-```bash
-pm2 status
-curl http://localhost:3000/api/health
+Check it at:
+
+```
+http://<EC2-Public-IP>:3000
 ```
 
 ---
 
-### Step 6: Verify Traffic Routing via Application Load Balancer (ALB)
+## 10. Deployment architecture
 
-1. Open **EC2 Console** -> choose **Target Groups** -> select `MonaPerfume-TG`.
-2. Select the **Targets** tab and verify the health status of `MonaPerfume-EC2-PRIVATE-01`. The status must display **Healthy**.
-3. Open **EC2 Console** -> choose **Load Balancers** -> select `MonaPerfume-ALB`.
-4. Copy the ALB **DNS name** (e.g., `MonaPerfume-ALB-123456789.us-east-1.elb.amazonaws.com`).
-5. Test connectivity from your local terminal or browser:
-```bash
-curl http://MonaPerfume-ALB-123456789.us-east-1.elb.amazonaws.com/api/health
+The deployed system architecture is as follows:
+
+```text
+Internet
+      │
+      ▼
+CloudFront
+      │
+      ▼
+Amazon S3 (React Build)
+
+Browser
+      │
+      ▼
+Backend API (EC2)
+      │
+      ▼
+Amazon RDS PostgreSQL
 ```
+
+CloudFront distributes static assets (HTML, CSS, JavaScript, and images), while EC2 handles application logic and communicates with PostgreSQL on Amazon RDS.
 
 ---
 
-### Step 7: Create AMI (Amazon Machine Image) to Launch Second EC2 Instance
+## 11. Verify the system
 
-Once the first EC2 instance is configured and successfully deployed:
+After deployment completes, verify:
 
-1. Open **EC2 Console** -> choose **Instances** -> right-click `MonaPerfume-EC2-PRIVATE-01`.
-2. Select **Image and templates** -> click **Create image**.
-3. Enter Image name: `MonaPerfume-Backend-AMI` -> click **Create image**.
-4. Once the AMI is available, use it to launch `MonaPerfume-EC2-PRIVATE-02` in **Subnet Private 2** (AZ us-east-1b) to complete the **Multi-AZ High Availability** architecture.
+- Frontend is accessible through CloudFront or EC2.
+- Backend returns data through the API.
+- Prisma connects successfully to PostgreSQL.
+- EC2 can access RDS.
+- Users can register, log in, and interact with data.
+
+
+
+

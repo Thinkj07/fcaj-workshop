@@ -1,156 +1,225 @@
 ---
-title : "Cài đặt môi trường và Deploy"
-date : 2026-07-26
-weight : 3
-chapter : false
-pre : " <b> 5.5.3 </b> "
+title: " Cài đặt môi trường và Deploy"
+date: 2026-07-28
+weight: 3
+chapter: false
+pre: "<b>5.5.3</b>"
 ---
 
-# Cài đặt môi trường và Triển khai ứng dụng (Deploy)
+## 1. Mục tiêu
 
-Trong phần này, chúng ta sẽ kết nối vào EC2 Instance nằm ở Private Subnet bằng **AWS Systems Manager Session Manager (SSM)**, tiến hành cài đặt môi trường Node.js, clone mã nguồn Backend dự án Perfume, cấu hình biến môi trường kết nối đến **Amazon RDS** và **Amazon S3**, thực thi lệnh di trú cơ sở dữ liệu (Prisma Migrate & Seed), khởi chạy server backend với **PM2** và kiểm tra khả năng hoạt động qua **Application Load Balancer (ALB)**.
+Phần này hướng dẫn cài đặt môi trường phát triển và triển khai hệ thống website bán nước hoa trên nền tảng AWS. Sau khi hoàn thành, hệ thống sẽ bao gồm:
+
+- Backend chạy trên Amazon EC2.
+- Cơ sở dữ liệu PostgreSQL sử dụng Amazon RDS.
+- Frontend React được triển khai thông qua Amazon S3 và Amazon CloudFront.
+- Prisma ORM quản lý cơ sở dữ liệu.
+- Toàn bộ ứng dụng có thể truy cập thông qua Internet và giao tiếp với cơ sở dữ liệu trong môi trường AWS.
 
 ---
 
-### Bước 1: Kết nối vào EC2 Instance qua AWS Systems Manager (SSM)
+## 2. Yêu cầu môi trường
 
-Vì EC2 instance nằm trong Private Subnet và không gán Public IP, chúng ta sử dụng **SSM Session Manager** để kết nối an toàn mà không cần mở port SSH (22).
+Trước khi triển khai hệ thống, cần chuẩn bị các công cụ sau:
 
-1. Truy cập **AWS Management Console** -> chọn **Systems Manager** (hoặc gõ `Session Manager` vào thanh tìm kiếm).
-2. Tại menu bên trái, chọn **Session Manager** -> chọn **Start session**.
-3. Chọn EC2 instance `MonaPerfume-EC2-PRIVATE-01` -> chọn **Start session**.
-4. Trình duyệt sẽ mở một tab terminal làm việc với giao diện lệnh `sh-4.2$`.
+- Node.js (khuyến nghị phiên bản LTS)
+- npm
+- Git
+- Prisma ORM
+- PostgreSQL
+- Docker và Docker Compose (nếu chạy cơ sở dữ liệu cục bộ)
+- Tài khoản AWS
 
-Chuyển sang người dùng `ec2-user` và di chuyển về thư mục cá nhân:
+---
+
+## 3. Cài đặt Git và clone dự án
+
+Trên Amazon Linux EC2, cài đặt Git nếu chưa có:
+
 ```bash
-sudo su - ec2-user
-cd ~
+yum install -y git
+```
+
+Di chuyển vào thư mục người dùng `ec2-user` và clone repository:
+
+```bash
+cd /home/ec2-user
+git clone https://github.com/Thinkj07/perfume-web.git
+```
+
+Nếu muốn làm việc ngay trong thư mục dự án:
+
+```bash
+cd /home/ec2-user/perfume-web
 ```
 
 ---
 
-### Bước 2: Cài đặt Node.js, Git và PM2
+## 4. Cài đặt Node.js
 
-1. Cập nhật danh sách gói hệ thống trên Amazon Linux 2023:
+Trên Amazon Linux EC2, sử dụng **NVM (Node Version Manager)** để cài đặt Node.js.
+
 ```bash
-sudo dnf update -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+source "$NVM_DIR/nvm.sh"
+
+nvm install --lts
+nvm use --lts
 ```
 
-2. Cài đặt **Git**:
-```bash
-sudo dnf install git -y
-git --version
-```
+Kiểm tra phiên bản:
 
-3. Cài đặt **Node.js 22.x** (phiên bản phù hợp với ứng dụng):
 ```bash
-curl -fsSL https://rpm.nodesource.com/setup_22.x | sudo bash -
-sudo dnf install -y nodejs
 node -v
 npm -v
 ```
 
-4. Cài đặt công cụ quản lý tiến trình **PM2** toàn cục:
-```bash
-sudo npm install -g pm2
-```
-
 ---
 
-### Bước 3: Tải mã nguồn Backend và Cài đặt thư viện
+## 4. Cài đặt thư viện dự án
 
-1. Clone repository chứa mã nguồn backend cửa hàng nước hoa (Perfume Store):
+Di chuyển vào thư mục backend:
+
 ```bash
-git clone <link-repo>
-cd web-project/backend
+cd backend
 ```
 
-2. Tiến hành cài đặt các thư viện phụ thuộc (dependencies):
+Cài đặt toàn bộ package:
+
 ```bash
 npm install
 ```
 
 ---
 
-### Bước 4: Cấu hình biến môi trường (.env)
+## 5. Cấu hình biến môi trường
 
-Tạo tệp `.env` để kết nối ứng dụng với cơ sở dữ liệu **Amazon RDS** và lưu trữ tài nguyên trên **Amazon S3**:
+Tạo file `.env`
 
 ```bash
-nano .env
+cp .env.example .env
 ```
 
-Nhập các thông tin cấu hình tương ứng với tài nguyên hạ tầng AWS đã khởi tạo ở các bước trước:
+Ví dụ:
 
 ```env
+NODE_ENV=development
 PORT=3000
-NODE_ENV=production
 
-# Đường dẫn kết nối Amazon RDS (Database Endpoint từ bước 5.4)
-DATABASE_URL="postgresql://postgres:<YourPassword>@monaperfume-rds.c123456789.us-east-1.rds.amazonaws.com:5432/monaperfumedb?schema=public"
+DATABASE_URL=postgresql://postgres:password@database-1.xxxxx.ap-southeast-1.rds.amazonaws.com:5432/perfume_store?schema=public
 
-# Thông tin Amazon S3 Bucket (từ bước 5.6)
-AWS_REGION=us-east-1
-S3_BUCKET_NAME=monaperfume-assets-bucket
+JWT_SECRET=replace-with-secret-key
+JWT_ISSUER=perfume-api
+JWT_AUDIENCE=perfume-client
 
-# Khóa bảo mật ứng dụng
-JWT_SECRET="MonaPerfumeSecretKey2026"
+ACCESS_TOKEN_TTL_SECONDS=900
+REFRESH_TOKEN_TTL_SECONDS=604800
+
+BCRYPT_ROUNDS=12
+
+AWS_REGION=ap-southeast-1
+STAGE=production
 ```
 
-Lưu và đóng tệp (`Ctrl + O`, `Enter`, `Ctrl + X`).
+Trong đó:
+
+- `DATABASE_URL` là chuỗi kết nối đến Amazon RDS.
+- `JWT_SECRET` dùng để ký JWT Token.
+- `PORT` là cổng chạy Backend.
 
 ---
 
-### Bước 5: Thực thi di trú Database và Khởi chạy Backend
+## 6. Kết nối PostgreSQL Amazon RDS
 
-1. Tạo cấu trúc bảng và di trú dữ liệu (Prisma Migration):
+Kiểm tra kết nối PostgreSQL:
+
 ```bash
-npx prisma generate
+nc -vz database-1.xxxxx.ap-southeast-1.rds.amazonaws.com 5432
+```
+
+Nếu kết nối thành công sẽ hiển thị:
+
+```text
+Connected to database-1.xxxxx.ap-southeast-1.rds.amazonaws.com:5432
+```
+
+---
+
+## 7. Khởi tạo cơ sở dữ liệu
+
+Sau khi cấu hình `.env`, thực hiện migrate:
+
+```bash
 npx prisma migrate deploy
 ```
 
-2. Khởi tạo dữ liệu mẫu ban đầu (Seed Database):
+Nếu dự án có dữ liệu mẫu:
+
 ```bash
-npm run db:seed
+npx prisma db seed
 ```
 
-3. Khởi chạy ứng dụng backend trên cổng `3000` bằng **PM2**:
+Lệnh `db seed` chỉ cần thực hiện khi muốn thêm dữ liệu ban đầu vào hệ thống.
+
+---
+
+## 8. Chạy Backend
+
+Khởi động server:
+
 ```bash
-pm2 start src/server.js --name "monaperfume-backend"
-pm2 save
+npm run dev
 ```
 
-4. Cấu hình **PM2** tự động khởi chạy cùng hệ thống khi EC2 reboot:
-```bash
-pm2 startup systemd
+Kết quả:
+
+```text
+API listening on port 3000
 ```
 
-5. Kiểm tra trạng thái ứng dụng:
-```bash
-pm2 status
-curl http://localhost:3000/api/health
+Kiểm tra:
+
+```
+http://<EC2-Public-IP>:3000
 ```
 
 ---
 
-### Bước 6: Kiểm tra kết nối qua Application Load Balancer (ALB)
 
-1. Truy cập **EC2 Console** -> chọn **Target Groups** -> chọn `MonaPerfume-TG`.
-2. Chọn tab **Targets** và kiểm tra trạng thái của `MonaPerfume-EC2-PRIVATE-01`. Trạng thái phải hiển thị **Healthy**.
-3. Truy cập **EC2 Console** -> chọn **Load Balancers** -> chọn `MonaPerfume-ALB`.
-4. Copy tên **DNS name** của ALB (ví dụ: `MonaPerfume-ALB-123456789.us-east-1.elb.amazonaws.com`).
-5. Kiểm tra kết nối từ máy local hoặc trình duyệt:
-```bash
-curl http://MonaPerfume-ALB-123456789.us-east-1.elb.amazonaws.com/api/health
+## 9. Kiến trúc triển khai
+
+Hệ thống sau khi triển khai có kiến trúc như sau:
+
+```text
+Internet
+      │
+      ▼
+CloudFront
+      │
+      ▼
+Amazon S3 (React Build)
+
+Browser
+      │
+      ▼
+Backend API (EC2)
+      │
+      ▼
+Amazon RDS PostgreSQL
 ```
+
+CloudFront chịu trách nhiệm phân phối các file tĩnh (HTML, CSS, JavaScript và hình ảnh), trong khi EC2 xử lý toàn bộ nghiệp vụ của hệ thống và giao tiếp với cơ sở dữ liệu PostgreSQL trên Amazon RDS.
 
 ---
 
-### Bước 7: Tạo AMI (Amazon Machine Image) để mở rộng EC2 thứ hai
+## 10. Kiểm tra hệ thống
 
-Sau khi EC2 đầu tiên đã cấu hình và deploy thành công:
+Sau khi triển khai hoàn tất, kiểm tra:
 
-1. Vào **EC2 Console** -> chọn **Instances** -> nhấp chuột phải vào `MonaPerfume-EC2-PRIVATE-01`.
-2. Chọn **Image and templates** -> chọn **Create image**.
-3. Đặt tên Image: `MonaPerfume-Backend-AMI` -> chọn **Create image**.
-4. Sau khi AMI sẵn sàng, sử dụng AMI này để khởi tạo `MonaPerfume-EC2-PRIVATE-02` ở **Subnet Private 2** (AZ us-east-1b) để hoàn thiện kiến trúc **Multi-AZ High Availability**.
+- Frontend truy cập thành công qua CloudFront hoặc EC2.
+- Backend trả về dữ liệu thông qua API.
+- Prisma kết nối được PostgreSQL.
+- EC2 có thể truy cập RDS.
+- Người dùng có thể đăng ký, đăng nhập và thao tác với dữ liệu.
