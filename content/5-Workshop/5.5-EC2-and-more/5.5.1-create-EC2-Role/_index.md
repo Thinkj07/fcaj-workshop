@@ -34,7 +34,7 @@ Search and choose `AmazonS3FullAccess`and `AmazonSSMManagedInstanceCore`
   | Role name | MonaPerfume-EC2-S3-SSM |
   | Description | Allow MonaPerfume's EC3 interact with S3 and can be accessed through SSM |
 
-4. Chọn **Create role**
+4. Choose **Create role**
 
 ### Create first EC2
 
@@ -47,10 +47,10 @@ Search and choose `AmazonS3FullAccess`and `AmazonSSMManagedInstanceCore`
     - **Amazon Linux 2023 kernel-6.18 AMI**
     - Architecture: **64-bit (x86)**
 
-![Chọn AMAZON LINUX AMI](/images/5-Workshop/5.5-EC2-and-more/5.5.1-create-EC2-Role/ec2-1.png)
+![Choose AMAZON LINUX AMI](/images/5-Workshop/5.5-EC2-and-more/5.5.1-create-EC2-Role/ec2-1.png)
 
 4. **Instance type**:
-   - Chọn **t3.micro** (Free Tier eligible)
+   - Choose **t3.micro** (Free Tier eligible)
    - 2 vCPU, 1 GiB RAM
 
 5. **Key pair**: Select an existing key pair, or select **Create new key pair** to generate a new one.
