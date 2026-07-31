@@ -6,38 +6,42 @@ chapter : false
 pre : " <b> 5.8. </b> "
 ---
 
-# Demo kết quả hệ thống trang web MonaPerfume
-
-Trong phần này, bạn có thể tải lên các hình ảnh demo thực tế kết quả triển khai hệ thống cửa hàng nước hoa **MonaPerfume** chạy trên hạ tầng AWS
+# Demo kết quả giao diện ứng dụng MonaPerfume
 
 ---
 
-### 1. Giao diện trang chủ và Sản phẩm (Frontend Demo)
+### 1. Giao diện trang chủ và Danh mục sản phẩm (Homepage & Product Catalog)
 
-*Thêm hình ảnh demo giao diện trang chủ website nước hoa tại đây*
+*Thêm hình ảnh demo giao diện trang chủ và danh sách sản phẩm nước hoa tại đây*
 
 ![Demo Trang chủ](/images/5-Workshop/5.8-Demo/frontend-home.png)
 
 ---
 
-### 2. Giao diện chi tiết sản phẩm và Giỏ hàng
+### 2. Giao diện chi tiết sản phẩm và Giỏ hàng (Product Detail & Cart)
 
-*Thêm hình ảnh demo trang chi tiết sản phẩm, giỏ hàng hoặc đặt hàng tại đây*
+*Thêm hình ảnh demo thông tin chi tiết sản phẩm, chọn dung tích và thêm vào giỏ hàng tại đây*
 
 ![Demo Giỏ hàng](/images/5-Workshop/5.8-Demo/frontend-cart.png)
 
 ---
 
-### 3. Kiểm tra kết nối API Backend qua ALB (Backend API Demo)
+### 3. Chức năng tìm kiếm (Search)
 
-*Thêm hình ảnh demo kết nối API Backend thành công (ví dụ: Swagger UI hoặc phản hồi JSON từ ALB)*
-
-![Demo Backend API](/images/5-Workshop/5.8-Demo/backend-api.png)
+![Demo Tìm kiếm](/images/5-Workshop/5.8-Demo/frontend-search.png)
 
 ---
 
-### 4. Kiểm tra chứng chỉ SSL/HTTPS & Tốc độ qua CloudFront
+### 4. Chức năng Thanh toán (Checkout)
 
-*Thêm hình ảnh demo kết quả truy cập qua tên miền CloudFront với HTTPS an toàn*
+*Thêm hình ảnh demo tìm kiếm sản phẩm theo thương hiệu, bộ lọc giá và quy trình đặt hàng/thanh toán tại đây*
 
-![Demo CloudFront SSL](/images/5-Workshop/5.8-Demo/cloudfront-ssl.png)
+![Demo Đặt hàng](/images/5-Workshop/5.8-Demo/frontend-checkout.png)
+
+---
+
+### 5. Trang quản trị hệ thống (Admin Dashboard)
+
+*Thêm hình ảnh demo trang quản trị Admin (quản lý danh mục sản phẩm, đơn hàng và người dùng) tại đây*
+
+![Demo Admin Dashboard](/images/5-Workshop/5.8-Demo/admin-dashboard.png)

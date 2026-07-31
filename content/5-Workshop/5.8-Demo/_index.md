@@ -1,43 +1,49 @@
 ---
-title : "System Demo Results"
+title : "Demo Results"
 date : 2026-07-31
 weight : 8
 chapter : false
 pre : " <b> 5.8. </b> "
 ---
 
-# MonaPerfume System Demo Results
+# MonaPerfume Application Demo Results
 
-In this section, you can upload actual screenshots demonstrating the deployed **MonaPerfume** website system running on AWS infrastructure
+In this section, you can upload actual screenshots demonstrating the user-facing frontend features and the administrative interface of the **MonaPerfume** web application.
 
 ---
 
-### 1. Homepage and Products Showcase (Frontend Demo)
+### 1. Homepage & Product Catalog Showcase (Homepage & Product Catalog)
 
-*Upload homepage demo screenshots here*
+*Upload homepage and perfume product catalog demo screenshots here*
 
 ![Homepage Demo](/images/5-Workshop/5.8-Demo/frontend-home.png)
 
 ---
 
-### 2. Product Detail & Shopping Cart Demo
+### 2. Product Detail & Shopping Cart Demo (Product Detail & Cart)
 
-*Upload product detail or shopping cart demo screenshots here*
+*Upload product detail page, volume selection, and cart management screenshots here*
 
 ![Cart Demo](/images/5-Workshop/5.8-Demo/frontend-cart.png)
 
 ---
 
-### 3. Backend API Verification via ALB (Backend API Demo)
+### 3. Search Functionality (Search)
 
-*Upload API response screenshots (e.g. Swagger UI or JSON healthcheck response via ALB)*
-
-![Backend API Demo](/images/5-Workshop/5.8-Demo/backend-api.png)
+![Search Demo](/images/5-Workshop/5.8-Demo/frontend-search.png)
 
 ---
 
-### 4. SSL/HTTPS & CloudFront Distribution Verification
+### 4. Checkout Functionality (Checkout)
 
-*Upload CloudFront HTTPS connection and distribution status screenshots here*
+*Upload product search by brand, price filter, and order placement/checkout flow screenshots here*
 
-![CloudFront SSL Demo](/images/5-Workshop/5.8-Demo/cloudfront-ssl.png)
+![Order Demo](/images/5-Workshop/5.8-Demo/frontend-checkout.png)
+
+---
+
+### 5. Administrative Dashboard (Admin Dashboard)
+
+*Upload administrative dashboard screenshots (managing product catalogs, orders, and user accounts) here*
+
+![Admin Dashboard Demo](/images/5-Workshop/5.8-Demo/admin-dashboard.png)
