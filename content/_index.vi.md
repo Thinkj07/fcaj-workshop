@@ -17,7 +17,7 @@ chapter: false
 
 &emsp; **Ngành:** Kỹ thuật máy tính
 
-&emsp; **Lớp:** AWS082025
+&emsp; **Lớp:** AWS062026
 
 &emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
 
