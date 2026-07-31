@@ -1,32 +1,33 @@
 ---
 title : "Blog 3"
 date : "2026-07-27"
-weight : 1
+weight : 3
 chapter : false
 pre : " <b> 3.3. </b> "
 ---
 
 # WHAT IS AMAZON EVENTBRIDGE? BUILDING EVENT-DRIVEN APPLICATIONS ON AWS
 
-Amazon EventBridge is a serverless event bus service that makes it easy to connect applications using data from your own applications, integrated Software-as-a-Service (SaaS) applications, and AWS services. EventBridge simplifies building event-driven applications by automatically routing events from sources to targets without managing infrastructure.
+Amazon EventBridge is a serverless service that connects application components together by generating and processing events. It is the foundation for building event-driven architecture — a design style in which components communicate by emitting and responding to events rather than calling each other directly, making systems more flexible and easier to scale.
 
-![Kiến trúc VPC](/images/5-Workshop/5.3-vpc/vpc_archi2.png)
+![Blog 3](/images/3-BlogsPosted/3.3-Blog3/image3.png)
 
-### Key Takeaways
+### Key points to know
 
-- **Event-Driven Architecture**: EventBridge enables decoupling of system components, allowing services to communicate asynchronously through events.
-- **Event Buses & Event Pipes**:
-  - **Event Bus**: Ingests and routes events to multiple targets based on flexible filtering rules.
-  - **EventBridge Pipes**: Creates point-to-point integrations directly from event sources (such as SQS, DynamoDB Streams, Kinesis) to targets without requiring custom glue code.
-- **EventBridge Scheduler**: Allows scheduling recurring tasks or one-time invocations at specific future timestamps with high accuracy, supporting millions of concurrent schedules.
-- **Rich Integrations**: Provides out-of-the-box integration with over 200 AWS services and dozens of major SaaS partners (Zendesk, Datadog, PagerDuty, etc.).
-- **Filtering & Transformation**: Enables event filtering and payload transformation on the fly before delivering events to targets, reducing processing overhead on consumer services.
+- EventBridge provides two main mechanisms for processing and forwarding events: Event bus and Pipes.
+- An event bus acts as a router, receiving events from multiple sources (custom-built applications, AWS services, third-party software) and delivering them to multiple destinations, optionally transforming the data before delivery.
+- Pipes are suited for point-to-point integration: each pipe receives events from a single source and delivers them to a single destination, but supports more advanced data transformation and enrichment.
+- Pipes and event buses are often used together: a pipe can receive data from a DynamoDB Stream and send it to an event bus, which then distributes it to multiple destinations according to configured rules.
+- EventBridge also includes EventBridge Scheduler — a serverless scheduler that lets you create, run, and manage tasks on a schedule (cron or rate expression) or as one-time tasks, with configurable flexible time windows and retry limits.
 
-Adopting EventBridge makes system architectures more resilient, easier to scale, and simpler to maintain while significantly reducing the boilerplate code needed to connect services.
+In essence, EventBridge solves a problem commonly faced when building microservice systems: how components can "know" about events happening elsewhere without calling each other's APIs directly. Instead of writing complex back-and-forth call logic, a service simply publishes an event to the event bus, and interested services register rules to receive the exact event types they need. This approach makes it easy to add or remove components without affecting the rest of the system — well suited to projects that need scalability and easy long-term maintenance.
+
+Post's link on group:https://www.facebook.com/groups/awsstudygroupfcj/permalink/2229202854511341/?rdid=wj3xkTX7M7viFBap#
 
 ---
 
 ### References
 
-- [What is Amazon EventBridge? – AWS Documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)
-- [Amazon EventBridge Features](https://aws.amazon.com/eventbridge/features/)
+- [What Is Amazon EventBridge? – AWS Documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)
+- [Amazon EventBridge Event Buses – AWS Documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html)
+- [Amazon EventBridge Pipes – AWS Documentation](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html)

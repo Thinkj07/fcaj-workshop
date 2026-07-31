@@ -42,6 +42,10 @@ While RNAT is logically a regional resource, its physical underlying infrastruct
 
 ![RNAT](/images/3-BlogsPosted/3.1-Blog1/1.png)
 
+Waiting for approved on group: 
+
+![image](/images/3-BlogsPosted/3.1-Blog1/2.png)
+
 ---
 
 ### References

@@ -1,18 +1,28 @@
 ---
-title : "Dọn dẹp tài nguyên"
-date : 2026-07-30
-weight : 9
-chapter : false
-pre : " <b> 5.9. </b> "
+title: "Dọn dẹp tài nguyên"
+date: 2026-07-30
+weight: 9
+chapter: false
+pre: " <b> 5.9. </b> "
 ---
 
 #### Dọn dẹp tài nguyên
 
-Trong phần này, chúng ta sẽ tiến hành dọn dẹp các tài nguyên AWS đã khởi tạo trong quá trình thực hành (**CloudFront Distribution** và **Amazon S3 Bucket**) để tránh phát sinh chi phí không cần thiết trên tài khoản AWS.
+Trong phần này, chúng ta sẽ tiến hành dọn dẹp các tài nguyên AWS đã khởi tạo trong quá trình thực hành để tránh phát sinh chi phí không cần thiết trên tài khoản AWS.
 
 ---
 
 #### Các bước dọn dẹp
+
+### Dọn VPC và các tài nguyên đi kèm
+1. Tại **VPC Console**, truy cập **NAT gateways** chọn và xóa Regional NAT Gateway mà bạn tạo cùng với VPC.
+2. Quay lại mục **VPC**, chọn VPC của project -> **Action** -> **Delete VPC**, lúc này Khi confirm xóa thì AWS sẽ xóa hết subnet, IGW, route table được tạo cùng lúc với VPC.
+
+### Dọn EC2 và các tài nguyên đi kèm
+1. Tại **EC2 Console**, truy cập **Load Balancer** chọn và delete ALB của project.
+2. Chuyển sang mục **Target Groups** chọn và delete target group của project.
+3. Chuyển sang mục **AMIs** chọn và deregister AMI của project, lúc này hãy tick chọn **Delete associated snapshots** để xóa cả snapshot.
+4. Chuyển sang mục **Instance** chọn và terminate 2 EC2 của project.
 
 ### Vô hiệu hóa (Disable) và Xóa CloudFront Distribution
 
@@ -24,7 +34,7 @@ Trong phần này, chúng ta sẽ tiến hành dọn dẹp các tài nguyên AWS
 6. Một dòng thông báo sẽ xuất hiện thông báo phải huỷ plan để có thể xoá, chọn **Cancel plan**.
 7. Chọn lại nút **Delete**, xác nhận xóa vĩnh viễn CloudFront Distribution.
 
-![Disable và Xóa CloudFront Distribution](/images/5-Workshop/5.9-Cleanup/delete-cloudfront.png)
+![Disable và Xóa CloudFront Distribution](/images/5-Workshop/5.6-Cleanup/delete-cloudfront.png)
 
 ---
 
@@ -38,4 +48,4 @@ Trong phần này, chúng ta sẽ tiến hành dọn dẹp các tài nguyên AWS
 6. Chọn lại Bucket **`monaperfume-frontend-bucket-2026`** ➔ Chọn nút **Delete**.
 7. Nhập chính xác tên Bucket **`monaperfume-frontend-bucket-2026`** vào ô xác nhận và bấm **Delete bucket**.
 
-![Làm rỗng và Xóa S3 Bucket](/images/5-Workshop/5.9-Cleanup/delete-s3.png)
+![Làm rỗng và Xóa S3 Bucket](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
