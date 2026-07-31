@@ -40,7 +40,13 @@ pre : " <b> 5.8. </b> "
 
 ---
 
-### 5. Trang quản trị hệ thống (Admin Dashboard)
+### 5. Thanh toán thành công (Checkout succesfully)
+
+![Thanh toán thành công](/images/5-Workshop/5.8-Demo/frontend-checkout-success.png)
+
+---
+
+### 6. Trang quản trị hệ thống (Admin Dashboard)
 
 *Thêm hình ảnh demo trang quản trị Admin (quản lý danh mục sản phẩm, đơn hàng và người dùng) tại đây*
 

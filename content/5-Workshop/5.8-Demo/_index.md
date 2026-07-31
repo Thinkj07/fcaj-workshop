@@ -8,8 +8,6 @@ pre : " <b> 5.8. </b> "
 
 # MonaPerfume Application Demo Results
 
-In this section, you can upload actual screenshots demonstrating the user-facing frontend features and the administrative interface of the **MonaPerfume** web application.
-
 ---
 
 ### 1. Homepage & Product Catalog Showcase (Homepage & Product Catalog)
@@ -42,7 +40,13 @@ In this section, you can upload actual screenshots demonstrating the user-facing
 
 ---
 
-### 5. Administrative Dashboard (Admin Dashboard)
+### 5. Checkout Successfully Functionality (Checkout success)
+
+![Checkout success](/images/5-Workshop/5.8-Demo/frontend-checkout-success.png)
+
+---
+
+### 6. Administrative Dashboard (Admin Dashboard)
 
 *Upload administrative dashboard screenshots (managing product catalogs, orders, and user accounts) here*
 
