@@ -12,7 +12,6 @@ pre : " <b> 5.8. </b> "
 
 ### 1. Homepage & Product Catalog Showcase (Homepage & Product Catalog)
 
-*Upload homepage and perfume product catalog demo screenshots here*
 
 ![Homepage Demo](/images/5-Workshop/5.8-Demo/frontend-home.png)
 
@@ -20,7 +19,6 @@ pre : " <b> 5.8. </b> "
 
 ### 2. Product Detail & Shopping Cart Demo (Product Detail & Cart)
 
-*Upload product detail page, volume selection, and cart management screenshots here*
 
 ![Cart Demo](/images/5-Workshop/5.8-Demo/frontend-cart.png)
 
@@ -34,8 +32,6 @@ pre : " <b> 5.8. </b> "
 
 ### 4. Checkout Functionality (Checkout)
 
-*Upload product search by brand, price filter, and order placement/checkout flow screenshots here*
-
 ![Order Demo](/images/5-Workshop/5.8-Demo/frontend-checkout.png)
 
 ---
@@ -47,7 +43,5 @@ pre : " <b> 5.8. </b> "
 ---
 
 ### 6. Administrative Dashboard (Admin Dashboard)
-
-*Upload administrative dashboard screenshots (managing product catalogs, orders, and user accounts) here*
 
 ![Admin Dashboard Demo](/images/5-Workshop/5.8-Demo/admin-dashboard.png)
