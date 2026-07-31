@@ -20,7 +20,7 @@ In this section, we will clean up all AWS resources created during the lab  to a
 1. Navigate to the **VPC Console**, select **NAT Gateways** from the left navigation pane, choose the regional NAT Gateway created alongside your VPC, and click Delete NAT Gateway. Wait for the status to change to Deleted.
 2. Return to the Your **VPCs** section, select the project's VPC, click Actions, and choose Delete VPC.In the confirmation dialog, confirm the deletion. AWS will automatically clean up associated subnets, Internet Gateways (IGW), and custom route tables generated during the VPC provisioning.
 
-### Dọn EC2 và các tài nguyên đi kèm
+### Cleaning Up EC2 and Associated Resources
 1. Navigate to the **EC2 Console**, go to Load Balancers, select the project's Application Load Balancer (ALB), and click Delete.
 2. Navigate to **Target Groups**, select the target group associated with the project, and click Delete.
 3. Navigate to **AMIs**, select the project's custom AMI, and click Deregister. Ensure the checkbox **Delete associated snapshots** is ticked to automatically delete the underlying EBS snapshot.
