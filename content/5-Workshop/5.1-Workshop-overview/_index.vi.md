@@ -13,7 +13,7 @@ Dự án **Perfume Web** là ứng dụng web thương mại điện tử phục
 ---
 ## Kiến trúc hệ thống
 
-![Architecture Overview](/images/5-Workshop/5.1-Workshop-overview/architecture.jpg)
+![Architecture Overview](/images/5-Workshop/5.1-Workshop-overview/architecture.png)
 
 ---
 
