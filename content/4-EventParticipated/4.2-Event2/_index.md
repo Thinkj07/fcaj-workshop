@@ -15,7 +15,7 @@ pre: " <b> 4.2. </b> "
 - Explore workforce data analytics using Amazon QuickSight and secure AI connectivity via Model Context Protocol (MCP).
 - Network and learn directly from experienced founders, AI engineers, and cloud architects in the ecosystem.
 
-### 2. Speakers List (Optional)
+### 2. Speakers List 
 
 - **Steve Tran** – Founder, CloudThinker
 - **Trung Vu** – CEO, Revve AI

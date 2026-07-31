@@ -15,7 +15,7 @@ pre: " <b> 4.2. </b> "
 - Khám phá giải pháp phân tích dữ liệu nhân sự với Amazon QuickSight và kết nối AI an toàn thông qua giao thức MCP (Model Context Protocol).
 - Giao lưu, lắng nghe chia sẻ từ các chuyên gia, founder và kỹ sư hàng đầu trong cộng đồng Cloud & AI.
 
-### 2. Danh Sách Diễn Giả (Optional)
+### 2. Danh Sách Diễn Giả 
 
 - **Steve Tran** – Founder, CloudThinker
 - **Trung Vu** – CEO, Revve AI

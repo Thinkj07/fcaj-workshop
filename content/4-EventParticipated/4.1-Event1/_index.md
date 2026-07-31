@@ -14,7 +14,7 @@ pre: " <b> 4.1. </b> "
 - Test practical scenario-handling skills and depth of understanding regarding AWS ecosystem services.
 - Foster teamwork, collaboration, and tactical decision-making under time pressure.
 
-### 2. Speakers List (Optional)
+### 2. Speakers List 
 
 *(Event conducted as an interactive head-to-head game show)*
 - **Organizers & Judges:** AWS Study Group / FCAJ Expert Team.

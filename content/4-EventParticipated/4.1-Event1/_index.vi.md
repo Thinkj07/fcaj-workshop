@@ -14,7 +14,7 @@ pre: " <b> 4.1. </b> "
 - Thử thách khả năng xử lý tình huống thực tế và mức độ am hiểu về các dịch vụ thuộc hệ sinh thái AWS.
 - Nâng cao tinh thần làm việc nhóm và chiến thuật phối hợp dưới áp lực thời gian.
 
-### 2. Danh Sách Diễn Giả (Optional)
+### 2. Danh Sách Diễn Giả 
 
 - **Ban tổ chức & Trọng tài:** Đội ngũ từ FCAJ.
 - **Quy mô:** 8 đội thi tranh tài qua các vòng đấu loại trực tiếp đến vòng tứ kết.
@@ -33,7 +33,7 @@ pre: " <b> 4.1. </b> "
 
 ### 5. Ứng Dụng Vào Công Việc
 
-- **Bổ sung hổng kiến thức:** Chủ động tra cứu, thực hành lại các mảng kiến thức AWS còn chưa nắm vững sau khi theo dõi các câu hỏi trong game show.
+- **Bổ sung kiến thức:** Chủ động tra cứu, thực hành lại các mảng kiến thức AWS còn chưa nắm vững sau khi theo dõi các câu hỏi trong game show.
 - **Cải thiện tư duy giải quyết vấn đề:** Áp dụng phương pháp phân tích nguyên nhân gốc rễ và phản xạ nhanh khi troubleshoot sự cố trong dự án thực tế.
 - **Thúc đẩy làm việc nhóm:** Tăng cường sự trao đổi, phản biện có xây dựng với đồng nghiệp khi thiết kế kiến trúc ứng dụng.
 

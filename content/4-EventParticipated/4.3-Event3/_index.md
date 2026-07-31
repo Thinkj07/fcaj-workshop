@@ -14,7 +14,7 @@ pre: " <b> 4.3. </b> "
 - Explore practical use cases: crowd monitoring, omni-channel ordering bots, Solution Architect copilots, and strategic business intelligence platforms.
 - Learn best practices for rapid Minimum Viable Product (MVP) prototyping, cloud cost management, and cross-functional team collaboration under tight deadlines.
 
-### 2. Speakers List (Optional)
+### 2. Speakers List 
 
 - **3KA Team** – S.H.E.P.H.E.R.D. Project
 - **One Team** – KFC Bot Agent Project

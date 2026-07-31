@@ -14,7 +14,7 @@ pre: " <b> 4.3. </b> "
 - Tìm hiểu các ca sử dụng (use cases) thực tế: từ điều phối đám đông, bot đặt món đa kênh, trợ lý thiết kế kiến trúc cho Solution Architect đến công cụ theo dõi tín hiệu doanh nghiệp.
 - Học hỏi kinh nghiệm xây dựng sản phẩm mẫu (MVP) trong thời gian ngắn, tối ưu chi phí hạ tầng và phối hợp nhóm hiệu quả dưới áp lực thời gian.
 
-### 2. Danh Sách Diễn Giả (Optional)
+### 2. Danh Sách Diễn Giả
 
 - **Nhóm 3KA** – Dự án S.H.E.P.H.E.R.D.
 - **Nhóm One Team** – Dự án KFC Bot Agent

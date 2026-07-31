@@ -1,20 +1,17 @@
 ---
-title : "Access S3 from on-premises"
-date : 2024-01-01
+title : "Setup Backend Server on EC2"
+date : 2026-07-26
 weight : 5
 chapter : false
 pre : " <b> 5.5. </b> "
 ---
 
-#### Overview
+# Setup Backend Server on EC2
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+In this section, we will deploy the compute infrastructure for the Perfume Store Backend application inside the VPC Private Subnet, including creating IAM Roles, launching EC2 instances, setting up an Application Load Balancer (ALB), and deploying the Node.js/Express application.
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+#### Steps Included:
 
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
-
-
-
+1. [Create IAM Role and EC2 Instance](5.5.1-create-EC2-Role/) - Create an IAM Role for SSM Session Manager & S3 access, then launch an EC2 instance in a Private Subnet.
+2. [Create Target Group and Application Load Balancer](5.5.2-create-ALB-ASgroup/) - Configure Target Group (Port 3000) and Application Load Balancer (ALB) across Public Subnets.
+3. [Environment Setup and Application Deployment](5.5.3-deploy/) - Connect to EC2 via SSM, install Node.js 22, Git, PM2, configure environment variables for RDS/S3, run database migrations, and launch the backend server.
