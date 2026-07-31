@@ -34,7 +34,7 @@ Trong phần này, chúng ta sẽ tiến hành dọn dẹp các tài nguyên AWS
 6. Một dòng thông báo sẽ xuất hiện thông báo phải huỷ plan để có thể xoá, chọn **Cancel plan**.
 7. Chọn lại nút **Delete**, xác nhận xóa vĩnh viễn CloudFront Distribution.
 
-![Disable và Xóa CloudFront Distribution](/images/5-Workshop/5.6-Cleanup/delete-cloudfront.png)
+![Disable và Xóa CloudFront Distribution](/images/5-Workshop/5.9-Cleanup/delete-cloudfront.png)
 
 ---
 
@@ -48,4 +48,4 @@ Trong phần này, chúng ta sẽ tiến hành dọn dẹp các tài nguyên AWS
 6. Chọn lại Bucket **`monaperfume-frontend-bucket-2026`** ➔ Chọn nút **Delete**.
 7. Nhập chính xác tên Bucket **`monaperfume-frontend-bucket-2026`** vào ô xác nhận và bấm **Delete bucket**.
 
-![Làm rỗng và Xóa S3 Bucket](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+![Làm rỗng và Xóa S3 Bucket](/images/5-Workshop/5.9-Cleanup/delete-s3.png)
