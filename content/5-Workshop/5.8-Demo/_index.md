@@ -12,15 +12,17 @@ pre : " <b> 5.8. </b> "
 
 ### 1. Homepage & Product Catalog Showcase (Homepage & Product Catalog)
 
+![Demo Home](/images/5-Workshop/5.8-Demo/frontend-home.png)
 
-![Homepage Demo](/images/5-Workshop/5.8-Demo/frontend-home.png)
+![Demo Prod](/images/5-Workshop/5.8-Demo/frontend-cart.png)
 
 ---
 
 ### 2. Product Detail & Shopping Cart Demo (Product Detail & Cart)
 
+![Demo Prod detail](/images/5-Workshop/5.8-Demo/frontend-pro-detail.png)
 
-![Cart Demo](/images/5-Workshop/5.8-Demo/frontend-cart.png)
+![Demo Cart](/images/5-Workshop/5.8-Demo/frontend-cart-detail.png)
 
 ---
 

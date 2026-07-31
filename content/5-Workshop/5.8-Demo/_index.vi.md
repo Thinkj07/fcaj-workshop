@@ -1,9 +1,9 @@
 ---
-title : "Demo kết quả"
-date : 2026-07-31
-weight : 8
-chapter : false
-pre : " <b> 5.8. </b> "
+title: "Demo kết quả"
+date: 2026-07-31
+weight: 8
+chapter: false
+pre: " <b> 5.8. </b> "
 ---
 
 # Demo kết quả giao diện ứng dụng MonaPerfume
@@ -14,11 +14,15 @@ pre : " <b> 5.8. </b> "
 
 ![Demo Trang chủ](/images/5-Workshop/5.8-Demo/frontend-home.png)
 
+![Demo Sản phẩm](/images/5-Workshop/5.8-Demo/frontend-cart.png)
+
 ---
 
 ### 2. Giao diện chi tiết sản phẩm và Giỏ hàng (Product Detail & Cart)
 
-![Demo Giỏ hàng](/images/5-Workshop/5.8-Demo/frontend-cart.png)
+![Demo sản phẩm chi tiết](/images/5-Workshop/5.8-Demo/frontend-pro-detail.png)
+
+![Demo Giỏ hàng](/images/5-Workshop/5.8-Demo/frontend-cart-detail.png)
 
 ---
 
@@ -29,7 +33,6 @@ pre : " <b> 5.8. </b> "
 ---
 
 ### 4. Chức năng Thanh toán (Checkout)
-
 
 ![Demo Đặt hàng](/images/5-Workshop/5.8-Demo/frontend-checkout.png)
 
